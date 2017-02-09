@@ -1,0 +1,46 @@
+
+
+.component-searchbar{
+
+    $icon-width: 2.4rem;
+    $li-padding: .8rem;
+    max-width: 8rem;
+    transition-property: width;
+    transition-duration: .5s;
+    transition-timing-function: ease;
+
+    &.active {
+        max-width: 100%;
+    }
+
+    &-input {
+        padding:$li-padding/2 $icon-width+$li-padding $li-padding/2 $li-padding;
+        background: #fff;
+        border-radius: 4px;
+
+        >input {
+            width: 100%;
+            -webkit-appearance: none;
+            border:none;
+            background: transparent;
+            outline: none;
+        }
+    }
+    
+    &-form {
+        border-radius: 1rem;
+        position: relative;
+
+        >button.ion-ios-search {
+            background: transparent;
+            font-size: 1.8rem;
+            border: none;
+            position: absolute;
+            right: .6rem;
+            transform: translateY(-50%);
+            top: 50%;
+            width: $icon-width;
+            text-align: right;
+        }
+    }
+}

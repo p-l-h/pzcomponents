@@ -1,0 +1,68 @@
+
+
+.component-recorder {
+    background: $gray-lighter;
+    text-align: center;
+    padding: 2rem 0 2.2rem;
+    color: $gray-light;
+    border-top: 1px solid darken($gray-lighter, 10%);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 12;
+    $button-border: .8rem;
+    $button-width: 8rem;
+    >button {
+        display: block;
+        margin: 1rem auto 0;
+        width: $button-width;
+        height: $button-width;
+        border-radius: 50%;
+        padding: 0;
+        background: #fff;
+        text-align: center;
+        border: none;
+
+        &:before {
+            content: '';
+            width: $button-width - 2 * $button-border;
+            height: $button-width - 2 * $button-border;
+            transition: all 1s;
+            display: inline-block;
+            background: #f00;
+            border-radius: 50%;
+        }
+    }
+
+    &-text {
+        >em {
+            font-style: normal;
+        }
+
+        &.active {
+            display: none;
+        }
+    }
+
+    &.active {
+        >button {
+            &:before {
+                width:  $button-width - 2 * $button-border - 3rem;
+                height: $button-width - 2 * $button-border - 3rem;
+                background: $brand-primary;
+                border-radius: 5px;
+            }
+        }
+
+        >.component-recorder-text {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        
+    }
+}

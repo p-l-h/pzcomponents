@@ -1,0 +1,43 @@
+
+
+.component-progress {
+    background: #19191b;
+    height: .7em;
+    &-value {
+        height: 100%;
+        background: $brand-primary;
+    }
+}
+
+.component-progress.skin-weixin {
+    height: 1px;
+    background: #c5c7c9;
+
+    >.component-progress-value {
+        position: relative;
+        $width: 4em;
+        $dot-width: .8em;
+        >i {
+            position: absolute;
+            
+            width: $width;
+            height: $width;
+            right: -$width/2;
+            top: -$width/2;
+
+            &:before {
+                border-radius: 50%;
+                border: 1px solid #d5d7d9;
+                background: #fff;
+                width: $dot-width;
+                height: $dot-width;
+                display: block;
+                position: absolute;
+                content: ' ';
+                top: ($width - $dot-width) /2;
+                left: ($width - $dot-width) /2;
+
+            }
+        }
+    }
+}

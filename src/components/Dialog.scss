@@ -1,0 +1,83 @@
+
+.component-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: #fff;
+    padding: 1rem;
+    width: 80%;
+    border-radius: 3px;
+
+    &-title {
+        text-align: center;
+    }
+
+
+    &.alert {
+        text-align: center;
+        
+        >.component-dialog-footer {
+            >button{
+                display: block;
+                width: 100%;
+                background: #387ef5;
+                color: #fff;
+                border: none;
+                border-radius: 3px;
+                padding: .8rem 0;
+            }
+        }
+    }
+
+    &.confirm {
+        text-align: center;
+    }
+
+    &.confirm,
+    &.prompt {
+        >.component-dialog-footer {
+            font-size: 0;
+            >button {
+                width: 47%;
+                font-size: 1.3rem;
+
+                &:last-child {
+                    margin-left: 6%;
+                }
+            }
+        }
+    }
+
+    &.prompt {
+        >.component-dialog-body {
+
+            >input,
+            >textarea {
+                border: 1px solid darken($gray-lighter, 10%);
+                outline: none;
+                resize: none;
+                border-radius: 2px;
+                display: block;
+                width: 100%;
+                padding: .6rem 1rem;
+
+
+                &:focus {
+                    border-color: $brand-primary;
+                }
+            }
+        }
+    }
+
+
+
+    &-title {
+        font-size: 1.6rem;
+        font-weight: 200;
+    }
+
+    &-body {
+        padding: 1rem 0 1.2rem;
+    }
+}

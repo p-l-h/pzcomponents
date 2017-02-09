@@ -1,0 +1,47 @@
+
+
+.list {
+    $border-color: darken($gray-lighter, 8%);
+    background: #fff;
+    border-top: 1px solid $border-color;
+
+    >.item {
+        border-bottom: 1px solid $border-color;
+        padding: 1rem;
+        position: relative;
+    }
+}
+
+.item-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+.item-content {
+    text-align: right;
+    display: block;
+    color: inherit;
+    >img {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+    }
+
+    >.ion-ios-arrow-right {
+        position: relative;
+        top: .1rem;
+        margin-left: .2rem;
+    }
+}
+
+
+ol,
+ul {
+    &.list {
+        list-style: none;
+        padding-left: 0;
+    }
+}

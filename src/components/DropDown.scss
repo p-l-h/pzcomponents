@@ -1,0 +1,47 @@
+
+
+.component-dropdown {
+    position: absolute;
+    display: none;
+    $main-color: $brand-assertive;
+    background: $main-color;
+    color: #fff;
+    text-align: left;
+    border-radius: .5rem;
+    padding: .8rem 0;
+    transition: top .5s ease, left .5s ease, right .5s ease, bottom .5s ease;
+
+    $triangle-size: 1rem;
+    
+    >ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+
+        >li {
+            >button {
+                border: none;
+                text-align: left;
+                background: transparent;
+                -webkit-appearance: none;
+                display: block;
+                width: 100%;
+                line-height: 1;
+                padding: .8rem 1.6rem;
+                color: inherit;
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &-left {
+        &:before {
+            content: ' ';
+            position: absolute;
+            top:  $triangle-size * 1.6;
+            border: $triangle-size solid $main-color;
+            border-color: transparent  transparent transparent $main-color;
+            right: 0 - $triangle-size*1.6;
+        }
+    }
+}

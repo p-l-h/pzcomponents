@@ -1,0 +1,164 @@
+
+@import './Panel.scss';
+@import './Recorder.scss';
+
+.component-richeditor {
+    margin-bottom: 1rem;
+    &-text {
+        outline: none;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 100px;
+        background: #fff;
+        margin-bottom: 10px;
+        @include text-break;
+
+    }
+
+    &-btns {
+        >button {
+            padding: 0;
+            border: none;
+            background: transparent;
+            margin-right: 1rem;
+            color: $gray-light;
+            outline: none;
+            font-size: 2rem;
+            width: 4rem;
+            height: 4rem;
+            text-align: center;
+            border-radius: 30%;
+            color: #fff;
+            // &:before {
+            //     margin-right: .2rem;
+            // }
+
+            &.icon-camera {
+                background: $brand-success;
+            }
+
+            &.icon-mic {
+                background: $brand-danger;
+            }
+        }
+    }
+
+    &-imgs,
+    &-audios {
+        list-style: none;
+        font-size: 0;
+        padding: 0;
+    }
+
+    &-faker {
+        display: none;
+        margin-top: .6rem;
+    }
+
+    &.readonly {
+        >.component-richeditor-text {
+            min-height: 0;
+            height: auto;
+        }
+
+        >.component-richeditor-faker {
+            display: block;
+        }
+
+
+    }
+
+    &-imgs {
+        >li {
+            width: 22.5%;
+            display: inline-block;
+            margin-right: 3%;
+            position: relative;
+            margin-bottom: 5px;
+
+            >.item {
+                width: 100%;
+                height: 5rem;
+                vertical-align: middle;
+                background-size: cover;
+                position: relative;
+                
+                >img {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                }
+
+                >.ion-android-remove-circle {
+                    font-size: 2rem;
+                    position: absolute;
+                    color: #d00;
+                    right: -.5em;
+                    top: -.5em;
+                    padding-left: 2em;
+                    padding-bottom: 2em;
+                }
+            }
+
+        
+            &:nth-child(4n) {
+                margin-right: 0;
+
+            }
+        }
+
+         &.readonly {
+            .ion-android-remove-circle {
+                display: none;
+            }
+            >li {
+                width: 100%;
+                display: block;
+
+                >.item {
+                    height: auto !important;
+                    background: transparent !important;
+
+                    >img {
+                        opacity: 1;
+                        position: static;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    &-audios {
+        >li {
+            margin-bottom: 6px;
+
+            >.component-audio,
+            >.component-audioplayer {
+                >del {
+                    font-size: 2.4rem;
+                    position: absolute;
+                    color: #d00;
+                    right: -.5em;
+                    top: -.5em;
+                }
+            }
+            
+        }
+
+        &.readonly {
+            >li {
+                >.component-audio,
+                >.component-audioplayer {
+                    >del {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

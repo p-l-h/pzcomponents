@@ -1,0 +1,76 @@
+
+
+.component-audioplayer {
+    background: #232326;
+    border-radius: 3px;
+    position: relative;
+    height: 2em;
+    font-size: 1.2rem;
+    $toggle-width: 2em;
+    $volumn-width: 8em;
+    display: none;
+    padding: 0 $volumn-width 0 $toggle-width;
+    border: 1px solid $gray-lighter;
+    &-toggle {
+        color: #fff;
+        position: absolute;
+        width: $toggle-width;
+        left: 0;
+        top: 0;
+        text-align: center;
+        height: 100%;
+
+        >i {
+            position: absolute;
+            top: 50%;
+            font-size: 1.6rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        >.ion-pause {
+            display: none;
+        }
+    }
+
+    &-volume {
+        position: absolute;
+        right: 0;
+        right: 0;
+        top: 0;
+    }
+
+    &.active {
+        >.component-audioplayer-toggle {
+            >.ion-pause {
+                display: block;
+            }
+
+            >.ion-play {
+                display: none;
+            }
+        }
+    }
+
+    >audio {
+        display: none;
+    }
+}
+
+.component-audioplayer.skin-weixin {
+    background: #fff;
+    height: 4em;
+    $toggle-width: 4em;
+    $volumn-width: 0;
+    padding: 0 $volumn-width 0 $toggle-width;
+
+    >.component-audioplayer-toggle {
+        color: $brand-primary;
+        width: $toggle-width;
+
+        >i {
+            font-size: 2em;
+        }
+    }
+
+}

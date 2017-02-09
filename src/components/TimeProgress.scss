@@ -1,0 +1,47 @@
+
+
+.component-timeprogress {
+
+    position: relative;
+    color: #fff;
+    $text-width: 4em;
+    padding: .66em $text-width;
+    >em,
+    >strong {
+        position: absolute;
+        width: $text-width;
+        top: .25em;
+        text-align: center;
+    }
+
+    >em {
+        left: 0;
+        font-style: normal;
+    }
+
+    >strong {
+        right: 0;
+        font-weight: 400;
+    }
+
+    >.compoennt-progress {
+        width: 100%;
+    }
+}
+
+.component-timeprogress.skin-weixin {
+    color: #888;
+    font-size: 1.2em;
+    padding-top: 1.6em;
+    padding-right: 5em;
+    
+    >em,
+    >strong {
+        top: .85em;
+    }
+
+    >strong {
+        padding-right: 1em;
+        width: 5em;
+    }
+}
