@@ -557,3 +557,4 @@ var RichEditor = function (_EventBase2) {
 }(_EventBase3.EventBase);
 
 exports.default = RichEditor;
+//# sourceMappingURL=RichEditor.js.map

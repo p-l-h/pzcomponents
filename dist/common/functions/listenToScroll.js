@@ -13,25 +13,24 @@ exports.listenToScroll = listenToScroll;
 function listenToScroll(elem, callback) {
 
     var to = void 0;
-    var lastScrollHeight = 0;
+    var lastScrollTop = elem.scrollTop();
 
     elem.on('scroll', function (e) {
-
         to && clearTimeout(to);
 
         to = setTimeout(function () {
 
-            var currentScrollHeight = elem.scrollTop();
+            var currentScrollTop = elem.scrollTop();
             var direction = 'down';
-            if (lastScrollHeight > currentScrollHeight) {
+            if (lastScrollTop > currentScrollTop) {
                 direction = 'up';
             }
-
-            lastScrollHeight = currentScrollHeight;
-
+            lastScrollTop = currentScrollTop;
             callback({
-                direction: direction
+                direction: direction,
+                event: e
             });
         }, 500);
     });
 }
+//# sourceMappingURL=listenToScroll.js.map

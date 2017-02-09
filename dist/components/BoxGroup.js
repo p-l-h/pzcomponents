@@ -147,3 +147,4 @@ var BoxGroup = exports.BoxGroup = function (_EventBase) {
     }]);
     return BoxGroup;
 }(_EventBase2.EventBase);
+//# sourceMappingURL=BoxGroup.js.map

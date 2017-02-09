@@ -55,3 +55,4 @@ var Uploader = exports.Uploader = function () {
     }]);
     return Uploader;
 }();
+//# sourceMappingURL=WeixinUploader.js.map

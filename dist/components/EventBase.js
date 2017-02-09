@@ -40,3 +40,4 @@ var EventBase = exports.EventBase = function () {
     }]);
     return EventBase;
 }();
+//# sourceMappingURL=EventBase.js.map

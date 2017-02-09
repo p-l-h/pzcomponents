@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.weixinShareGuide = undefined;
+exports.WeixinShareGuide = undefined;
 
 var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
 
@@ -15,18 +15,18 @@ var _createClass3 = _interopRequireDefault(_createClass2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var WEIXIN_SHARE_GUIDE = '\n    <div class="share-guide">\n        <img src="http://img.gsxservice.com/14554196_kggv8sac.png" />\n        <div class="share-guide-text">\n            <p>请点击右上角将作业分享给好友或朋友圈</p>\n        </div>\n    </div>\n';
+var WEIXIN_SHARE_GUIDE = '\n    <div class="component-weixinshare-guide">\n        <img src="http://img.gsxservice.com/14554196_kggv8sac.png" />\n        <div class="component-weixinshare-guide-text"></div>\n    </div>\n';
 
 var $weixinShareGuide = $(WEIXIN_SHARE_GUIDE);
 
-var weixinShareGuide = exports.weixinShareGuide = function () {
-    function weixinShareGuide() {
-        (0, _classCallCheck3.default)(this, weixinShareGuide);
+var WeixinShareGuide = exports.WeixinShareGuide = function () {
+    function WeixinShareGuide() {
+        (0, _classCallCheck3.default)(this, WeixinShareGuide);
 
         this.init();
     }
 
-    (0, _createClass3.default)(weixinShareGuide, [{
+    (0, _createClass3.default)(WeixinShareGuide, [{
         key: 'init',
         value: function init() {
             var self = this;
@@ -35,6 +35,11 @@ var weixinShareGuide = exports.weixinShareGuide = function () {
             $weixinShareGuide.on('click', function () {
                 self.hide();
             });
+        }
+    }, {
+        key: 'setContent',
+        value: function setContent(html) {
+            $weixinShareGuide.find('.component-weixinshare-guide-text').html('<div>' + html + '</div>');
         }
     }, {
         key: 'show',
@@ -47,5 +52,6 @@ var weixinShareGuide = exports.weixinShareGuide = function () {
             $weixinShareGuide.hide();
         }
     }]);
-    return weixinShareGuide;
+    return WeixinShareGuide;
 }();
+//# sourceMappingURL=WeixinShareGuide.js.map

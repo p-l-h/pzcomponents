@@ -137,3 +137,4 @@ var SearchBar = exports.SearchBar = function (_EventBase) {
     }]);
     return SearchBar;
 }(_EventBase2.EventBase);
+//# sourceMappingURL=SearchBar.js.map

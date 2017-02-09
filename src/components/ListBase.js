@@ -48,16 +48,15 @@ export class ListBase extends EventBase {
             data = data || {};
 
             if(options.processData) {
-                options.processData(data);
+                data = options.processData(data);
             }
 
 
-            let appendedItems = $(options.template.render(data));
             list.container.append(
-                appendedItems
+                options.template.render(data)
             );
 
-            list.trigger('appended', data, appendedItems);
+            list.trigger('appended', data);
 
             // let pageData = data.page || {
             //     pageNum: 1,
@@ -102,7 +101,6 @@ export class ListBase extends EventBase {
         // 如果使用自动加载的话，那么久默认绑定滚到底部的事件
         if (options.autoLoad) {
             list.on('scrollToBottom', function () {
-
                 if (list.container.css('display') === 'none') {
                     return;
                 }

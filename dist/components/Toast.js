@@ -102,3 +102,4 @@ function loading() {
 function unloading() {
     _loading.hide();
 }
+//# sourceMappingURL=Toast.js.map

@@ -3,29 +3,39 @@
 import {toast, loading, unloading} from '../../components/Toast';
 
 $(document).on('ajaxError', (xhr, options, error) => {
-    unloading();
+    // unloading();
     toast('请求异常');
 });
 
-export function getJson (url, data, success) {
+export function getJson (url, data, success, error, always) {
 
-    loading();
-    return $.getJSON(
-        url + '?' + $.param(data),
-        (response) => {
-            unloading();
-            if (response && (+response.code === 0 )) {
-                success(response.data);
-            }
-            else {
-                toast(response.msg || '请求出错了');
+    return $.ajax(
+        {
+            url,
+            data,
+            type: 'GET',
+            dataType: 'json',
+            success: (response) => {
+                if (response && (+response.code === 0 )) {
+                    success(response.data);
+                }
+                else {
+                    toast(response.msg || '请求出错了');
+                    error && error(response);
+                }
+            },
+            error: () => {
+                error && error();
+            },
+            complete: () =>  {
+                always && always();
             }
         }
     );
 }
 
-export function doPost(url, data, success, always) {
-    loading();
+export function doPost(url, data, success,error, always) {
+    // loading();
 
     return $.ajax(
         {
@@ -33,28 +43,31 @@ export function doPost(url, data, success, always) {
             data: data,
             type: 'POST',
             success: (response) => {
-                unloading();
                 if (response && (+response.code === 0)) {
                     success(response.data);
                 }
                 else {
                     toast(response.msg || '请求出错了');
+                    error && error(response);
                 }
-                always && always(response);
+
             },
             error: () => {
                 toast('请求出错了');
+                error && error();
+
             },
             complete: () => {
-               unloading();
+            //    unloading();
+               always && always();
             }
         }
     );
 
 }
 
-export function postJson (url, data, success, always) {
-    loading();
+export function postJson (url, data, success, error, always) {
+    // loading();
     return $.ajax(
         {
             url: url,
@@ -62,20 +75,22 @@ export function postJson (url, data, success, always) {
             type: 'POST',
             contentType: 'application/json',
             success: (response) => {
-                unloading();
                 if (response && (+response.code === 0)) {
                     success(response.data);
                 }
                 else {
                     toast(response.msg || '请求出错了');
+                    error && error(response);
                 }
-                always && always(response);
+
             },
             error: () => {
                 toast('请求出错了');
+                error && error();
             },
             complete: () => {
-               unloading();
+            //    unloading();
+               always && always();
             }
         }
     );

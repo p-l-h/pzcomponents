@@ -1,18 +1,16 @@
 
 
 const WEIXIN_SHARE_GUIDE = `
-    <div class="share-guide">
+    <div class="component-weixinshare-guide">
         <img src="http://img.gsxservice.com/14554196_kggv8sac.png" />
-        <div class="share-guide-text">
-            <p>请点击右上角将作业分享给好友或朋友圈</p>
-        </div>
+        <div class="component-weixinshare-guide-text"></div>
     </div>
 `;
 
 const $weixinShareGuide = $(WEIXIN_SHARE_GUIDE);
 
 
-export class weixinShareGuide  {
+export class WeixinShareGuide  {
     constructor() {
         this.init();
     }
@@ -24,6 +22,11 @@ export class weixinShareGuide  {
         $weixinShareGuide.on('click', () => {
             self.hide();
         });
+    }
+
+    setContent(html) {
+        $weixinShareGuide.find('.component-weixinshare-guide-text')
+            .html(`<div>${html}</div>`);
     }
 
     show() {

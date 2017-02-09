@@ -163,3 +163,4 @@ var weixinApi = exports.weixinApi = {
         wx.showOptionMenu();
     }
 };
+//# sourceMappingURL=weixinApi.js.map

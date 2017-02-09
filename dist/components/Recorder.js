@@ -128,3 +128,4 @@ var Recorder = function () {
 }();
 
 exports.default = Recorder;
+//# sourceMappingURL=Recorder.js.map

@@ -93,3 +93,4 @@ var IssueItem = exports.IssueItem = function (_EventBase) {
     }]);
     return IssueItem;
 }(_EventBase3.default);
+//# sourceMappingURL=IssueItem.js.map

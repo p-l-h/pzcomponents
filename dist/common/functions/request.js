@@ -3,13 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.postJson = exports.doPost = undefined;
+exports.postJson = exports.doPost = exports.getJson = undefined;
 
 var _stringify = require('babel-runtime/core-js/json/stringify');
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
-exports.getJson = getJson;
 exports.getJsonp = getJsonp;
 
 var _Toast = require('../../components/Toast');
@@ -17,70 +16,84 @@ var _Toast = require('../../components/Toast');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 $(document).on('ajaxError', function (xhr, options, error) {
-    (0, _Toast.unloading)();
+    // unloading();
     (0, _Toast.toast)('请求异常');
 });
 
-function getJson(url, data, success) {
+function getJson(url, data, _success, _error, always) {
 
-    (0, _Toast.loading)();
-    return $.getJSON(url + '?' + $.param(data), function (response) {
-        (0, _Toast.unloading)();
-        if (response && +response.code === 0) {
-            success(response.data);
-        } else {
-            (0, _Toast.toast)(response.msg || '请求出错了');
+    return $.ajax({
+        url: url,
+        data: data,
+        type: 'GET',
+        dataType: 'json',
+        success: function success(response) {
+            if (response && +response.code === 0) {
+                _success(response.data);
+            } else {
+                (0, _Toast.toast)(response.msg || '请求出错了');
+                _error && _error(response);
+            }
+        },
+        error: function error() {
+            _error && _error();
+        },
+        complete: function complete() {
+            always && always();
         }
     });
 }
 
-function doPost(url, data, _success, always) {
-    (0, _Toast.loading)();
+exports.getJson = getJson;
+function doPost(url, data, _success2, _error2, always) {
+    // loading();
 
     return $.ajax({
         url: url,
         data: data,
         type: 'POST',
         success: function success(response) {
-            (0, _Toast.unloading)();
             if (response && +response.code === 0) {
-                _success(response.data);
+                _success2(response.data);
             } else {
                 (0, _Toast.toast)(response.msg || '请求出错了');
+                _error2 && _error2(response);
             }
-            always && always(response);
         },
         error: function error() {
             (0, _Toast.toast)('请求出错了');
+            _error2 && _error2();
         },
         complete: function complete() {
-            (0, _Toast.unloading)();
+            //    unloading();
+            always && always();
         }
     });
 }
 
 exports.doPost = doPost;
-function postJson(url, data, _success2, always) {
-    (0, _Toast.loading)();
+function postJson(url, data, _success3, _error3, always) {
+    // loading();
     return $.ajax({
         url: url,
         data: (0, _stringify2.default)(data),
         type: 'POST',
         contentType: 'application/json',
         success: function success(response) {
-            (0, _Toast.unloading)();
             if (response && +response.code === 0) {
-                _success2(response.data);
+                _success3(response.data);
             } else {
                 (0, _Toast.toast)(response.msg || '请求出错了');
+                _error3 && _error3(response);
             }
-            always && always(response);
         },
         error: function error() {
             (0, _Toast.toast)('请求出错了');
+            _error3 && _error3();
         },
         complete: function complete() {
-            (0, _Toast.unloading)();
+            //    unloading();
+            always && always();
         }
     });
 }
@@ -95,3 +108,4 @@ function getJsonp(url, callback) {
         }
     });
 }
+//# sourceMappingURL=request.js.map

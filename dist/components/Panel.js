@@ -50,7 +50,7 @@ var Panel = exports.Panel = function () {
     }, {
         key: 'getTemplate',
         value: function getTemplate() {
-            return '\n            <div class="component-panel">\n                <div class="mask"></div>\n            </div>\n        ';
+            return '\n            <div class="component-panel" style="display:none;">\n                <div class="mask"></div>\n            </div>\n        ';
         }
     }, {
         key: 'bindEvents',
@@ -89,3 +89,4 @@ var Panel = exports.Panel = function () {
     }]);
     return Panel;
 }();
+//# sourceMappingURL=Panel.js.map

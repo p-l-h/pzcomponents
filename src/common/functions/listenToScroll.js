@@ -6,27 +6,25 @@
 
 
 export function listenToScroll(elem, callback) {
-    
+
     let to;
-    let lastScrollHeight = 0;
-    
+    let lastScrollTop = elem.scrollTop();
+
     elem.on('scroll', (e) =>{
-        
         to && clearTimeout(to);
-        
+
         to = setTimeout(
             () => {
-                
-                let currentScrollHeight = elem.scrollTop();
+
+                let currentScrollTop = elem.scrollTop();
                 let direction = 'down';
-                if (lastScrollHeight > currentScrollHeight) {
+                if (lastScrollTop > currentScrollTop) {
                     direction = 'up';
                 }
-                
-                lastScrollHeight = currentScrollHeight;
-                
+                lastScrollTop = currentScrollTop;
                 callback({
-                    direction: direction
+                    direction: direction,
+                    event: e
                 });
             },
             500

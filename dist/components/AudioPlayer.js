@@ -108,3 +108,4 @@ var AudioPlayer = exports.AudioPlayer = function () {
     }]);
     return AudioPlayer;
 }();
+//# sourceMappingURL=AudioPlayer.js.map

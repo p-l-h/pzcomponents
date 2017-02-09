@@ -8,7 +8,7 @@ export class Panel  {
     }
 
     init() {
-        
+
         let self = this;
         let options = self.options;
 
@@ -22,19 +22,19 @@ export class Panel  {
         }
 
         self.container.append(self.inner);
-        
+
         if (options.bindEvents) {
             options.bindEvents(self.container);
         }
 
         $(document.body).append(self.container);
         self.bindEvents();
-        
+
     }
 
     getTemplate() {
         return `
-            <div class="component-panel">
+            <div class="component-panel" style="display:none;">
                 <div class="mask"></div>
             </div>
         `;
@@ -53,7 +53,7 @@ export class Panel  {
                 }
             });
         }
-       
+
     }
 
     show() {

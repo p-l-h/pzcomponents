@@ -1,13 +1,13 @@
 
 
 class Toast {
-   
+
     constructor() {
         this.init();
     }
 
     init() {
-       
+
         this.main = $(this.getTemplate());
         $(document.body).append(this.main);
 
@@ -22,7 +22,7 @@ class Toast {
             </div>
         `;
     }
- 
+
     show(useTimer) {
         let self = this;
         self.main.show();
@@ -35,7 +35,7 @@ class Toast {
                 1000
             );
         }
-        
+
     }
 
     hide() {
@@ -58,7 +58,7 @@ class Toast {
 
 let _toast = new Toast();
 
-export  function toast (content='', skin='black', useTimer=true) {
+export function toast (content='', skin='black', useTimer=true) {
 
     _toast.setContent(content);
     _toast.setSkin(skin);

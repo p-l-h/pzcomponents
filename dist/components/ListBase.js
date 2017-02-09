@@ -86,13 +86,12 @@ var ListBase = function (_EventBase) {
                 data = data || {};
 
                 if (options.processData) {
-                    options.processData(data);
+                    data = options.processData(data);
                 }
 
-                var appendedItems = $(options.template.render(data));
-                list.container.append(appendedItems);
+                list.container.append(options.template.render(data));
 
-                list.trigger('appended', data, appendedItems);
+                list.trigger('appended', data);
 
                 // let pageData = data.page || {
                 //     pageNum: 1,
@@ -135,7 +134,6 @@ var ListBase = function (_EventBase) {
             // 如果使用自动加载的话，那么久默认绑定滚到底部的事件
             if (options.autoLoad) {
                 list.on('scrollToBottom', function () {
-
                     if (list.container.css('display') === 'none') {
                         return;
                     }
@@ -221,3 +219,4 @@ var ListBase = function (_EventBase) {
 }(_EventBase2.EventBase);
 
 exports.ListBase = ListBase;
+//# sourceMappingURL=ListBase.js.map

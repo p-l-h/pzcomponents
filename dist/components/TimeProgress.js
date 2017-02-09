@@ -135,3 +135,4 @@ var TimeProgress = exports.TimeProgress = function () {
     }]);
     return TimeProgress;
 }();
+//# sourceMappingURL=TimeProgress.js.map
