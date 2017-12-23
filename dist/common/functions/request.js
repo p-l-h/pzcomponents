@@ -16,12 +16,10 @@ var _Toast = require('../../components/Toast');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 $(document).on('ajaxError', function (xhr, options, error) {
-    // unloading();
     (0, _Toast.toast)('请求异常');
 });
 
 function getJson(url, data, _success, _error, always) {
-
     return $.ajax({
         url: url,
         data: data,
@@ -46,8 +44,6 @@ function getJson(url, data, _success, _error, always) {
 
 exports.getJson = getJson;
 function doPost(url, data, _success2, _error2, always) {
-    // loading();
-
     return $.ajax({
         url: url,
         data: data,
@@ -65,7 +61,6 @@ function doPost(url, data, _success2, _error2, always) {
             _error2 && _error2();
         },
         complete: function complete() {
-            //    unloading();
             always && always();
         }
     });
@@ -73,7 +68,6 @@ function doPost(url, data, _success2, _error2, always) {
 
 exports.doPost = doPost;
 function postJson(url, data, _success3, _error3, always) {
-    // loading();
     return $.ajax({
         url: url,
         data: (0, _stringify2.default)(data),
@@ -92,7 +86,6 @@ function postJson(url, data, _success3, _error3, always) {
             _error3 && _error3();
         },
         complete: function complete() {
-            //    unloading();
             always && always();
         }
     });

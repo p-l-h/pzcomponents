@@ -43,7 +43,7 @@ var Recorder = function () {
     }, {
         key: 'getTemplate',
         value: function getTemplate() {
-            return '\n            <div class="component-recorder">\n                <div class="component-recorder-text">点击录音</div>\n                <div class="component-recorder-text active"><em>0</em>s/60s</div>\n                <button type="button"></button>\n            </div>\n        ';
+            return '\n            <div class="component-recorder">\n                <div class="component-recorder-text">\u70B9\u51FB\u5F55\u97F3</div>\n                <div class="component-recorder-text active"><em>0</em>s/60s</div>\n                <button type="button"></button>\n            </div>\n        ';
         }
     }, {
         key: 'bindEvents',

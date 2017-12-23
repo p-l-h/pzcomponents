@@ -344,26 +344,6 @@ var DEFAULT_EDITOR_OPTIONS = {
 var RichEditor = function (_EventBase2) {
     (0, _inherits3.default)(RichEditor, _EventBase2);
 
-
-    /**
-     * options = {
-     *     imgs: {
-     *          limit: 8 // 图片限制
-     *     },
-     *     voices: {
-     *          limit: 5 // 语音数量限制
-     *     },
-     *     text: {
-     *          limit: 1000 //文本最大限制
-     *          rows: 5 // 行数
-     *          placeholder: '占位文本'
-     *          content: ‘初始值'
-     *     },
-     *     data: {
-     *     }
-     * }
-     */
-
     function RichEditor(elem) {
         var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
         (0, _classCallCheck3.default)(this, RichEditor);
@@ -438,7 +418,7 @@ var RichEditor = function (_EventBase2) {
                 buttonsTemplate.push('<button data-opttype="add-img" class="icon-camera" type="button">图</button>');
             }
 
-            return '\n            <div class="component-richeditor-text" contenteditable="' + !options.readonly + '">' + options.data.content + '</div>\n            <ol class="component-richeditor-audios">\n            </ol>\n            <ul class="component-richeditor-imgs">\n            </ul>\n            <div class="component-richeditor-btns">\n                ' + buttonsTemplate.join('') + '\n                <button data-opttype="add-voice" type="button" class="icon-mic">音</button>\n            </div>\n        ';
+            return '\n            <div class="component-richeditor-text" contenteditable="' + !options.readonly + '">' + options.data.content + '</div>\n            <ol class="component-richeditor-audios">\n            </ol>\n            <ul class="component-richeditor-imgs">\n            </ul>\n            <div class="component-richeditor-btns">\n                ' + buttonsTemplate.join('') + '\n                <button data-opttype="add-voice" type="button" class="icon-mic">\u97F3</button>\n            </div>\n        ';
         }
     }, {
         key: 'bindEvents',

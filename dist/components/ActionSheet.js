@@ -32,22 +32,17 @@ var ActionPanel = exports.ActionPanel = function () {
 
             var self = this;
             self.main = self.getMain();
-
             var events = self.options.events;
-
             var currentCancelEvent = events.cancel;
-
             events.cancel = function () {
                 currentCancelEvent && currentCancelEvent.apply(_this);
                 self.hide();
             };
-
             self.main.on('click', 'button', function () {
                 var opttype = $(this).data('opttype');
                 var currentEventHandler = events[opttype];
                 currentEventHandler && currentEventHandler.call(this);
             });
-
             self.panel = new _Panel.Panel({
                 inner: self.main,
                 closeOnTouchBlack: true
@@ -64,16 +59,13 @@ var ActionPanel = exports.ActionPanel = function () {
             var result = ['<div class="component-actionsheet"><ul>'];
             var self = this;
             var options = self.options;
-
             if (options.tip) {
                 result.push('<li class="component-actionsheet-tip">' + options.tip + '</li>');
             }
-
             options.actions.forEach(function (item) {
                 result.push(self.getItemTemplate(item));
             });
             result.push('</ul>');
-
             return result.join('') + '<div class="component-actionsheet-cancel">' + '<button type="button" data-opttype="cancel">取消</button>' + '</div>';
         }
     }, {

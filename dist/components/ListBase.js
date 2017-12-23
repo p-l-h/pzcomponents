@@ -36,20 +36,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var ListBase = function (_EventBase) {
     (0, _inherits3.default)(ListBase, _EventBase);
 
-
-    /**
-     * options = {
-     *     template: '', // hogan compiled template
-     *     url: '',
-     *     processData: () = {},
-     *     defaultParams: {},
-     *     selfScroller: true,
-     *     loadMoreByHand: false,
-     *     autoLoad: true,
-     *     loadMoreTemplate: '<li>查看更多</li>'
-     * }
-     */
-
     function ListBase(container, options) {
         (0, _classCallCheck3.default)(this, ListBase);
 
@@ -92,19 +78,6 @@ var ListBase = function (_EventBase) {
                 list.container.append(options.template.render(data));
 
                 list.trigger('appended', data);
-
-                // let pageData = data.page || {
-                //     pageNum: 1,
-                //     pageSize: 10,
-                //     count: 0
-                // };
-
-                // if (+pageData.pageSize * +pageData.pageNum >= pageData.count) {
-                //     list.nomore(true);
-                // }
-                // else {
-                //     list.nomore(false);
-                // }
             });
         }
     }, {
@@ -131,7 +104,6 @@ var ListBase = function (_EventBase) {
             var $window = $(window);
             var $body = $(document.body);
 
-            // 如果使用自动加载的话，那么久默认绑定滚到底部的事件
             if (options.autoLoad) {
                 list.on('scrollToBottom', function () {
                     if (list.container.css('display') === 'none') {
@@ -148,7 +120,6 @@ var ListBase = function (_EventBase) {
                 });
             }
 
-            // 手动加载的话，绑定点击事件
             if (list.options.loadMoreByHand) {
                 var loadMoreElem = $(list.options.loadMoreTemplate || '<li class="more">查看更多</li>');
 
@@ -157,7 +128,6 @@ var ListBase = function (_EventBase) {
                 });
                 list.loadMoreElem = loadMoreElem;
             } else {
-                // 滚动加载的话，绑定滚动事件
                 (0, _listenToScroll.listenToScroll)($window, function (evt) {
 
                     if (evt.direction === 'up') {

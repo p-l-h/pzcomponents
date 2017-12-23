@@ -34,18 +34,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var SearchBar = exports.SearchBar = function (_EventBase) {
     (0, _inherits3.default)(SearchBar, _EventBase);
 
-
-    /**
-     * Creates an instance of SearchBar.
-     *
-     * @param {ZeptoElem} container 容器
-     * @param {Object} options 配置项
-     * @property {string} options.method GET OR POST
-     * @property {string} options.action 要请求的url
-     * @property {Function} options.getParams 获取查询参数
-     * @property {Function} options.searched 搜索结束之后
-     */
-
     function SearchBar(container, options) {
         (0, _classCallCheck3.default)(this, SearchBar);
 
@@ -106,13 +94,6 @@ var SearchBar = exports.SearchBar = function (_EventBase) {
                 }
             });
         }
-
-        /**
-         * 激活searchbar
-         *
-         * @param {Boolean} selfTrigger 是否是由输入框触发的
-         */
-
     }, {
         key: 'focus',
         value: function focus(selfTrigger) {
@@ -120,13 +101,6 @@ var SearchBar = exports.SearchBar = function (_EventBase) {
             this.container.addClass('active');
             !selfTrigger && this.searchInput.focus();
         }
-
-        /**
-         * 移除searchbar 的激活状态
-         *
-         * @param {Boolean} selfTrigger 是否是由输入框触发的
-         */
-
     }, {
         key: 'blur',
         value: function blur(selfTrigger) {

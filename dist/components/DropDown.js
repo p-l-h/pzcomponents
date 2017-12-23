@@ -81,8 +81,6 @@ var DropDown = exports.DropDown = function () {
 
             options.position = options.position || 'left';
 
-            // let scrollTop = $window.scrollTop();
-            // let scrollLeft = $window.scrollLeft();
             var windowWidth = $window.width();
             var bodyHeight = $(document.body).height();
             var offset = elem.offset();

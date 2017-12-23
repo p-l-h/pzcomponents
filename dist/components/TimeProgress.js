@@ -18,19 +18,6 @@ var _Progress = require('./Progress');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var TimeProgress = exports.TimeProgress = function () {
-
-    /**
-     * Creates an instance of TimeProgress.
-     * 示例options
-     * {
-     *    total: 60,
-     *    value: 30
-     * }
-     * @param {ZeptoElelent} container
-     * @param {Object} options
-     *
-     */
-
     function TimeProgress(container, options) {
         (0, _classCallCheck3.default)(this, TimeProgress);
 

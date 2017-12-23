@@ -7,25 +7,17 @@ exports.weixinApi = undefined;
 
 var _request = require('./request');
 
-var jsApiList = ['chooseWXPay', 'hideOptionMenu', 'getLocation', 'chooseImage', 'previewImage', 'uploadImage', 'downloadImage', 'startRecord', 'stopRecord', 'onVoiceRecordEnd', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareQZone', 'onMenuShareWeibo']; /**
-                                                                                                                                                                                                                                                                                                                                                                                      * @file 微信jssdk 配置
-                                                                                                                                                                                                                                                                                                                                                                                      * @author peilonghui
-                                                                                                                                                                                                                                                                                                                                                                                      */
-
+var jsApiList = ['chooseWXPay', 'hideOptionMenu', 'getLocation', 'chooseImage', 'previewImage', 'uploadImage', 'downloadImage', 'startRecord', 'stopRecord', 'onVoiceRecordEnd', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 'downloadVoice', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareQZone', 'onMenuShareWeibo'];
 var noop = function noop() {};
 var wx = window.wx;
 
 var DEFAULT_SHARE_DATA = {
-    title: '', // 分享标题
-    desc: '', // 分享描述
-    link: '', // 分享链接
-    imgUrl: '', // 分享图标
-    success: function success() {
-        // 用户确认分享后执行的回调函数
-    },
-    cancel: function cancel() {
-        // 用户取消分享后执行的回调函数
-    }
+    title: '',
+    desc: '',
+    link: '',
+    imgUrl: '',
+    success: function success() {},
+    cancel: function cancel() {}
 };
 
 var weixinApi = exports.weixinApi = {
@@ -34,7 +26,7 @@ var weixinApi = exports.weixinApi = {
             url: location.href
         }, function (data) {
             data.jsApiList = jsApiList;
-            // data.debug = true;
+
             wx.config(data);
         });
     },

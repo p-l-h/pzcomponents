@@ -8,7 +8,6 @@ $(document).on('ajaxError', (xhr, options, error) => {
 });
 
 export function getJson (url, data, success, error, always) {
-
     return $.ajax(
         {
             url,
@@ -35,8 +34,6 @@ export function getJson (url, data, success, error, always) {
 }
 
 export function doPost(url, data, success,error, always) {
-    // loading();
-
     return $.ajax(
         {
             url: url,
@@ -58,7 +55,6 @@ export function doPost(url, data, success,error, always) {
 
             },
             complete: () => {
-            //    unloading();
                always && always();
             }
         }

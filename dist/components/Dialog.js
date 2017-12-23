@@ -175,7 +175,7 @@ var Popup = exports.Popup = function (_Dialog) {
 }(Dialog);
 
 var alertDialog = new Popup({
-    footer: '\n        <button type="button" data-opttype="ok">好</button>\n    ',
+    footer: '\n        <button type="button" data-opttype="ok">\u597D</button>\n    ',
     skin: 'alert'
 });
 
@@ -194,7 +194,7 @@ var alert = exports.alert = function alert(content) {
 };
 
 var confirmDialog = new Popup({
-    footer: '\n        <button type="button" class="btn-default btn" data-opttype="no">否</button>\n        <button type="button" class="btn-primary btn" data-opttype="yes">是</button>\n    ',
+    footer: '\n        <button type="button" class="btn-default btn" data-opttype="no">\u5426</button>\n        <button type="button" class="btn-primary btn" data-opttype="yes">\u662F</button>\n    ',
     skin: 'confirm'
 });
 
@@ -213,7 +213,7 @@ var confirm = exports.confirm = function confirm(content) {
 };
 
 var promptDialog = new Popup({
-    footer: '\n        <button type="button" class="btn-default btn" data-opttype="no">取消</button>\n        <button type="button" class="btn-primary btn" data-opttype="yes">确定</button>\n    ',
+    footer: '\n        <button type="button" class="btn-default btn" data-opttype="no">\u53D6\u6D88</button>\n        <button type="button" class="btn-primary btn" data-opttype="yes">\u786E\u5B9A</button>\n    ',
     skin: 'prompt'
 });
 promptDialog.addHandler('no', function () {

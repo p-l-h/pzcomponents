@@ -13,15 +13,14 @@
         text-align: center;
     }
 
-
     &.alert {
         text-align: center;
-        
+
         >.component-dialog-footer {
             >button{
                 display: block;
                 width: 100%;
-                background: #387ef5;
+                background:$brand-primary;;
                 color: #fff;
                 border: none;
                 border-radius: 3px;
@@ -61,7 +60,6 @@
                 display: block;
                 width: 100%;
                 padding: .6rem 1rem;
-
 
                 &:focus {
                     border-color: $brand-primary;
